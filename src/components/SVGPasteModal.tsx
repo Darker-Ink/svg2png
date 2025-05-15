@@ -15,7 +15,7 @@ interface SVGPasteModalProps {
 const SVGPasteModal: React.FC<SVGPasteModalProps> = ({ isOpen, onClose, onSubmit, initialContent = '' }) => {
   const [content, setContent] = useState(initialContent);
   const [error, setError] = useState<string | null>(null);
-  const editorRef = useRef<EditorRef>();
+  const editorRef = useRef<EditorRef>(null);
 
   useEffect(() => {
     if (isOpen && editorRef.current) {
